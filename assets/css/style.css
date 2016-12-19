@@ -1,0 +1,27 @@
+
+/*full page background, no scroll bars*/
+html { 
+  background: url(../images/starwarsbg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+.imgHolder {
+    float: left;
+    padding: 38px;
+    background-color: #0089ff;
+    border-radius: 29px;
+    margin: 36px;
+    text-align: center;
+}
+.character{
+	height: 500px;
+}
+
+h2 span.spacer {
+   padding:0 5px;
+   font-size: 16px;
+}
