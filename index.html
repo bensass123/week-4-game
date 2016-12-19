@@ -4,29 +4,53 @@
     <meta charset="UTF-8">
     <title>Star Wars</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<!-- 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
- -->	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
 
 <body>
-
-<div class = "imgHolder">
-	<h2><span class = "charName">Luke Skywalker</span></h2>
-  <img class="character" src="assets/images/oldLuke.png"
-    alt="Luke">
-  	<h2><span class = "charHP">150</span></h2>
+<div class = "title">
+	<h3 id ="yourChar">Choose Your Character:</h3>
 </div>
 
-<div class = "imgHolder">
-<h2><span class = "charName">Han Solo</span></h2>
-  <img class="character" src="assets/images/hanSolo.jpg"
-    alt="Han Solo">
-  	<h2><span class = "charHP">160</span></h2>
+<div id = "#top">
+
+	<div id="Luke" class="imgHolder" >
+		<h2><span class = "charName">Luke Skywalker (Vengeful and Grizzled)</span></h2>
+	  	<img class="character" src="assets/images/oldLuke.png" alt="Luke">
+	  	<h2><span class = "charHP">150</span></h2>
+	</div>
+
+	<div class = "imgHolder" id = "Han">
+		<h2><span class = "charName">Han Solo</span></h2>
+	  	<img class="character" src="assets/images/hanSolo.jpg" alt="Han Solo">
+	  	<h2><span class = "charHP">160</span></h2>
+	</div>
+
+	<div class = "imgHolder" id = "Palpatine">
+		<h2><span class = "charName" >Emperor Palpatine</span></h2>
+	  	<img class="character" src="assets/images/palpatine.png" alt="Palpatine">
+	  	<h2><span class = "charHP">180</span></h2>
+	</div>
+
+	<div class = "imgHolder" id = "Vader">
+		<h2><span class = "charName">Darth Vader</span></h2>
+	  	<img class="character" src="assets/images/vader.jpg" alt="Vader">
+	  	<h2><span class = "charHP">200</span></h2>
+	</div>
 </div>
+
+<div id = "bottom">
+</div>
+
+<div id = "defender">
+</div>
+
 
 </body>
-
+<script src="assets/javascript/game.js"></script>
 
 </html>

@@ -8,6 +8,23 @@ html {
   background-size: cover;
 }
 
+/*body {
+	font-family: starwars;
+}*/
+
+.selected {
+	background-color: red;
+    float: left;
+    padding: 38px;
+    border-radius: 29px;
+    margin: 36px;
+    text-align: center;
+}
+
+#bottom {
+	clear: left;
+}
+
 
 .imgHolder {
     float: left;
@@ -17,11 +34,26 @@ html {
     margin: 36px;
     text-align: center;
 }
+
 .character{
-	height: 500px;
+	height: 470px;
 }
 
 h2 span.spacer {
    padding:0 5px;
    font-size: 16px;
+}
+
+/*@font-face {
+    font-family: starwars;
+    src: url(../font/Star_Jedi_Rounded.ttf);
+}*/
+
+.charName, .charHP {
+	font-size: 50px;
+}
+
+.title {
+	font-size: 150px;
+    color: #ffffff;
 }
