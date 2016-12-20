@@ -5,9 +5,10 @@ var enemies;
 var characters = [];
 var defender;
 
-
+//asetup restart further, fix defender.cap error
 
 function setupGame(){
+	console.log('restart');
 	attacksWaged = 0;
 	playerSelected = false;
 	characters =[];
@@ -15,9 +16,9 @@ function setupGame(){
 	defender = null;
 	//adding character objects to array
 	characters.push(new Character(0, 'Luke', 150, 8, 10));
-	characters.push(new Character(0, 'Han', 160, 9, 12));
+	characters.push(new Character(0, 'Han', 160, 11, 12));
 	characters.push(new Character(0, 'Palpatine', 180, 15, 18));
-	characters.push(new Character(0, 'Vader', 200, 12, 35));
+	characters.push(new Character(0, 'vader', 200, 12, 35));
 }
 
 function Character(id, name, hp, ap, cap) {
@@ -75,29 +76,39 @@ $("#Palpatine").click(function() {
 	}
 });
 
-$("#Vader").click(function() {
+$("#vader").click(function() {
 	if (!playerSelected) {
-		$('#Vader').addClass('selected');
-		$('#Vader').removeClass('imgHolder');
+		$('#vader').addClass('selected');
+		$('#vader').removeClass('imgHolder');
 		player = characters[3];
 		setupEnemies(3);
 		playerSelected = true;
 	}
 	if (playerSelected && !defender) {
-		setDefender('Vader');
-		console.log('Vader');
+		setDefender('vader');
+		console.log('vader');
 	}
 });
 
 //listener for buttons
+
+$('#restartBtn').click(function () {
+	setupGame();
+});
+
+
 $('#attackButton').click(function attack(){
 	var currentAttack;
-	if ((player.hp > 0) && (defender.hp > 0)) {
+	if(!defender){
+		$('#attackInfo').text("No defender selected.");
+	}
+	else if ((player.hp > 0) && (defender.hp > 0) && defender) {
 		attacksWaged += 1;
 		currentAttack = player.ap * attacksWaged;
 		defender.hp = defender.hp - currentAttack;
 		player.hp = player.hp - defender.cap;
 		updateDisplay();
+		updateStory(currentAttack, defender.cap);
 		console.log("attack");
 	}
 });
@@ -108,23 +119,38 @@ function lose() {
 
 function slain() {
 	$('#defenderDiv').text("");
+	var s = "You have defeated " + defender.name + ". Select your next foe.";
+	$('#attackInfo').html(s);
 	defender = null;
+
+	//change div to you win
+	if (enemies.length === 0) {
+		$('#attackInfo').html('you win!!!!!!');
+		$('#restartBtn').removeClass('invisible');
+	}
+}
+
+
+//you attacked player for x damage, defender attacked you for x damage
+function updateStory(x, y) {
+	var s = "You attacked " + defender.name + " for " + x + " damage. <br>" + defender.name + " attacked you for " + y + " damage.";
+	$('#attackInfo').html(s);
 }
 
 
 //updates hp's after attack
 function updateDisplay() {
+	var p = "#" + player.name + "HP";
+	var d = "#" + defender.name + "HP";
+	if (defender.hp > 0){
+		$(p).text(player.hp);
+	}
+	$(d).text(defender.hp);
 	if (player.hp <= 0) {
 		lose();
 	}
-	else if (defender.hp <= 0) {
+	if (defender.hp <= 0) {
 		slain();
-	}
-	else if {
-		var p = "#" + player.name + "HP";
-		var d = "#" + defender.name + "HP";
-		$(p).text(player.hp);
-		$(d).text(defender.hp);
 	}
 }
 
@@ -149,6 +175,7 @@ function setDefender(defenderName) {
 			$(div).removeClass('imgHolder');
 			$(div).addClass('selected');
 			defender = enemies[i];
+			enemies.splice(i, 1);
 			console.log('defender ran, found name ' + defenderName);
         }
     }

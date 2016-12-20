@@ -8,9 +8,15 @@ html {
   background-size: cover;
 }
 
-/*body {
+body {
 	font-family: starwars;
-}*/
+}
+
+.attackText {
+	float: right;
+	color: white;
+    font-size: 80px;
+}
 
 .selected {
 	background-color: red;
@@ -48,10 +54,10 @@ h2 span.spacer {
    font-size: 16px;
 }
 
-/*@font-face {
+@font-face {
     font-family: starwars;
-    src: url(../font/Star_Jedi_Rounded.ttf);
-}*/
+    src: url(../font/Starjedi.ttf) format("truetype");
+}
 
 .charName, .charHP {
 	font-size: 50px;
@@ -65,9 +71,19 @@ h2 span.spacer {
     padding-left: 56px;
 }
 
-#attackButton{
+button {
 	height: 60px;
     width: 400px;
     font-size: 47px;
     margin-bottom: 17px;
+}
+
+#restartBtn {
+	position: relative;
+    top: 127px;
+    left: 2000px;
+}
+
+.invisible {
+	visibility: hidden;
 }
