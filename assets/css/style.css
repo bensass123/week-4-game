@@ -13,9 +13,11 @@ body {
 }
 
 .attackText {
-	float: right;
-	color: white;
-    font-size: 80px;
+    float: right;
+    position: relative;
+    right: 217px;
+    color: white;
+    font-size: 29px;
 }
 
 .selected {
@@ -23,7 +25,7 @@ body {
     float: left;
     padding: 19px;
     border-radius: 29px;
-    margin: 36px;
+    margin-left: 36px;
     text-align: center;
 }
 
@@ -38,20 +40,21 @@ body {
 
 .imgHolder {
     float: left;
-    padding: 38px;
+    padding: 20px;
+    padding-bottom: 44px;
     background-color: #0089ff;
     border-radius: 29px;
-    margin: 36px;
+    margin-left: 36px;
     text-align: center;
+    height: 100px;
 }
 
 .character{
-	height: 300px;
+	height: 100px;
 }
 
 h2 span.spacer {
    padding:0 5px;
-   font-size: 16px;
 }
 
 @font-face {
@@ -59,29 +62,32 @@ h2 span.spacer {
     src: url(../font/Starjedi.ttf) format("truetype");
 }
 
-.charName, .charHP {
-	font-size: 50px;
+.charName {
+	position: relative;
+	bottom: 9px;
+}
+
+.charHP{
+    position: relative;
+    top: 4px;
 }
 
 .title {
-	font-size: 100px;
     color: #ffffff;
     clear: left;
-    padding: 14px;
+    padding: 7px;
     padding-left: 56px;
 }
 
 button {
-	height: 60px;
-    width: 400px;
-    font-size: 47px;
     margin-bottom: 17px;
+    font-family: starwars;
 }
 
 #restartBtn {
 	position: relative;
-    top: 127px;
-    left: 2000px;
+    top: 50px;
+    left: 977px;
 }
 
 .invisible {
