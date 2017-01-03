@@ -161,7 +161,9 @@ $('#attackButton').click(function attack(){
 		defender.hp = defender.hp - currentAttack;
 		player.hp = player.hp - defender.cap;
 		updateDisplay();
-		updateStory(currentAttack, defender.cap);
+		if (player.hp > 0) {
+			updateStory(currentAttack, defender.cap);
+		}
 		console.log("attack");
 	}
 });
@@ -169,7 +171,8 @@ $('#attackButton').click(function attack(){
 });
 
 function lose() {
-
+		$('#attackInfo').html('you lose!!!!!!');
+		$('#restartBtn').removeClass('invisible');
 }
 
 function slain() {
